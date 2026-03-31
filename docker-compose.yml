@@ -1,0 +1,15 @@
+name: nc-roots-finder
+
+services:
+  web:
+    build: .
+    container_name: nc-roots-finder-web
+    restart: unless-stopped
+    networks:
+      - proxy
+    expose:
+      - "80"
+
+networks:
+  proxy:
+    external: true
